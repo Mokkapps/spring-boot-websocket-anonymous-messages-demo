@@ -8,15 +8,12 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.UUID;
-import java.util.function.Supplier;
 
 @Data
 @Slf4j
 @Service
 public class GreetingService {
     private final SimpMessagingTemplate simpMessagingTemplate;
-    private final Supplier<UUID> uuidSupplier = UUID::randomUUID;
     private static final String WS_MESSAGE_TRANSFER_DESTINATION = "/topic/greetings";
     private List<String> userNames = new ArrayList<>();
 

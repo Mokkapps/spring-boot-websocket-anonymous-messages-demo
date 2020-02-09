@@ -1,6 +1,17 @@
 import { Client, messageCallbackType } from '@stomp/stompjs';
 
-export class WebsocketService {
+interface IWebSocketService {
+  connect(
+    onConnectCb: Function,
+    onDisconnectCb: Function,
+    onErrorCb: Function
+  ): void;
+  disconnect(): void;
+  subscribe(destination: string, cb: messageCallbackType): void;
+  sendMessage(destination: string, body: string): void;
+}
+
+export class WebsocketService implements IWebSocketService {
   private readonly webSocketUrl =
     process.env.NODE_ENV === 'development'
       ? 'ws://localhost:8080/ws'

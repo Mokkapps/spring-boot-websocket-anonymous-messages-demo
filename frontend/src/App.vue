@@ -17,7 +17,7 @@ export default class App extends Vue {
   private messages: string[] = [];
 
   private readonly webSocketGreetingsSubscribeEndpoint = '/user/topic/greetings';
-  private readonly webSocketGreeetingsSendEndpoint = '/app/hello';
+  private readonly webSocketGreetingsSendEndpoint = '/app/hello';
 
   mounted(): void {
     this.webSocketService = WebsocketService.getInstance();
@@ -47,7 +47,7 @@ export default class App extends Vue {
   private sendMessage(): void {
     this.webSocketService &&
       this.webSocketService.sendMessage(
-        this.webSocketGreeetingsSendEndpoint,
+        this.webSocketGreetingsSendEndpoint,
         JSON.stringify({name: 'Any Name'})
       );
   }
