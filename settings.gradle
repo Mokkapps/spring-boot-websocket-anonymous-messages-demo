@@ -1,0 +1,3 @@
+rootProject.name = 'spring-boot-websocket-anonymous-messages-demo'
+include 'backend'
+include 'frontend'

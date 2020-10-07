@@ -1,4 +1,10 @@
 # Created by .ignore support plugin (hsz.mobi)
+.idea
+.gradle
+gradle
+gradlew
+gradlew.bat
+
 ### Node template
 # Logs
 logs
